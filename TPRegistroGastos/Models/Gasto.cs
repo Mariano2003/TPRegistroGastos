@@ -19,7 +19,7 @@ namespace TPRegistroGastos.Models
         [DataType(DataType.Date)]
         [CustomValidation(typeof(Gasto), nameof(ValidarFecha))] 
         [Column(TypeName = "date")]
-        public DateTime Fecha { get; set; }
+        public DateOnly Fecha { get; set; }
 
         [Required(ErrorMessage = "El nombre del comercio es obligatorio.")]
         [StringLength(250, ErrorMessage = "El nombre del comercio no debe superar los 250 caracteres.")]

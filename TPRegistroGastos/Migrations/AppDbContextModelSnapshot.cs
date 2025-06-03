@@ -35,7 +35,7 @@ namespace TPRegistroGastos.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<DateTime>("Fecha")
+                    b.Property<DateOnly>("Fecha")
                         .HasColumnType("date");
 
                     b.Property<decimal>("Monto")
