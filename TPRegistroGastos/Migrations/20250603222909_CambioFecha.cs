@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace TPRegistroGastos.Migrations
 {
     /// <inheritdoc />
-    public partial class Inicial : Migration
+    public partial class CambioFecha : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -19,7 +19,7 @@ namespace TPRegistroGastos.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Monto = table.Column<decimal>(type: "decimal(10,2)", precision: 10, scale: 2, nullable: false),
                     Descripcion = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Fecha = table.Column<DateTime>(type: "date", nullable: false),
                     NombreComercio = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false)
                 },
                 constraints: table =>
