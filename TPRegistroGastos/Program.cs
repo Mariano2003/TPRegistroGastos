@@ -16,8 +16,8 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins",builder => 
-     builder.AllowAnyOrigin()                   
+    options.AddPolicy("PermitirTodo", policy => 
+     policy.WithOrigins("null")                   
             .AllowAnyMethod()
             .AllowAnyHeader());
 });
@@ -33,7 +33,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowAllOrigins");
+app.UseCors("PermitirTodo");
 
 app.UseAuthorization();
 
