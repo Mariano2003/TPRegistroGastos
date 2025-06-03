@@ -29,6 +29,13 @@ namespace TPRegistroGastos.Controllers
             {
                 return BadRequest(ModelState);
             }
+
+          
+            if (gasto.Fecha > DateOnly.FromDateTime(DateTime.Now))
+            {
+                return BadRequest("La fecha no puede ser futura.");
+            }
+
             _context.Gastos.Add(gasto);
             await _context.SaveChangesAsync();
 
