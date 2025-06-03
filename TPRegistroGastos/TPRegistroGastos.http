@@ -1,0 +1,6 @@
+@TPRegistroGastos_HostAddress = http://localhost:5147
+
+GET {{TPRegistroGastos_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
