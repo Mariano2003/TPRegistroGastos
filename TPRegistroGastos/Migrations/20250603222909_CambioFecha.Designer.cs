@@ -12,8 +12,8 @@ using TPRegistroGastos.Models;
 namespace TPRegistroGastos.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250603212257_Inicial")]
-    partial class Inicial
+    [Migration("20250603222909_CambioFecha")]
+    partial class CambioFecha
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -39,7 +39,7 @@ namespace TPRegistroGastos.Migrations
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<decimal>("Monto")
                         .HasPrecision(10, 2)
