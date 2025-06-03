@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TPRegistroGastos.Models
 {
@@ -14,12 +15,24 @@ namespace TPRegistroGastos.Models
         [StringLength(250, MinimumLength = 3, ErrorMessage = "La descripción debe tener entre 3 y 250 caracteres.")]
         public string Descripcion { get; set; }
 
-        [Required(ErrorMessage = "La fecha es obligatoria.")]
+        [Required]
         [DataType(DataType.Date)]
+        [CustomValidation(typeof(Gasto), nameof(ValidarFecha))] 
+        [Column(TypeName = "date")]
         public DateTime Fecha { get; set; }
 
         [Required(ErrorMessage = "El nombre del comercio es obligatorio.")]
         [StringLength(250, ErrorMessage = "El nombre del comercio no debe superar los 250 caracteres.")]
         public string NombreComercio { get; set; }
+
+        public static ValidationResult ValidarFecha(DateTime fecha, ValidationContext context)
+        {
+            if (fecha > DateTime.Today)
+            {
+                return new ValidationResult("La fecha no puede ser futura.");
+            }
+
+            return ValidationResult.Success;
+        }
     }
 }

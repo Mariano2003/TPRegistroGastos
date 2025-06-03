@@ -36,7 +36,7 @@ namespace TPRegistroGastos.Migrations
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<DateTime>("Fecha")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<decimal>("Monto")
                         .HasPrecision(10, 2)
