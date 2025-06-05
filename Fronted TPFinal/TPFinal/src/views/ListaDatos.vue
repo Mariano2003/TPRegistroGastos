@@ -1,16 +1,25 @@
 <template>
   <div class="container">
     <h1>Registro de gastos</h1>
-    <p>________________________</p>
-    <ul>
-      <li v-for="item in items" :key="item.id">
-        <strong>Id:</strong> {{ item.id }} ||
-        <strong>Descripción:</strong> {{ item.descripcion }} ||
-        <strong>Fecha:</strong> {{ item.fecha }} ||
-        <strong>Monto: $</strong> {{ item.monto }} ||
-        <strong>Nombre del Comercio:</strong> {{ item.nombreComercio }}
-      </li>
-    </ul>
+    <p>Tabla</p>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Nombre del Comercio</th>
+          <th>Descripción</th>
+          <th>Monto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="item in items" :key="item.id">
+          <td>{{ item.fecha }}</td>
+          <td>{{ item.nombreComercio }}</td>
+          <td>{{ item.descripcion }}</td>
+          <td>${{ item.monto }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
