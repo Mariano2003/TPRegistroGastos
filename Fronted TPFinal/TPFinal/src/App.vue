@@ -8,7 +8,7 @@ import HelloWorld from './components/HelloWorld.vue'
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Registro de gastos</RouterLink>
-        <RouterLink to="/about">Ingresar gastos</RouterLink>
+        <RouterLink to="/ingresar">Ingresar gastos</RouterLink>
       </nav>
     </div>
   </header>
