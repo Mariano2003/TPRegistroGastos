@@ -71,3 +71,89 @@
     }
 }
 </script>
+
+<style scoped>
+div {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #34495e;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1.8px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  outline-offset: 2px;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.2rem;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background-color 0.25s ease;
+  width: 100%;
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(39, 174, 96, 0.3);
+}
+
+button:hover {
+  background-color: #2ecc71;
+}
+
+p {
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #27ae60;
+}
+
+p.error {
+  color: #e74c3c;
+}
+
+
+@media (max-width: 600px) {
+  div {
+    padding: 1rem;
+  }
+}
+</style>

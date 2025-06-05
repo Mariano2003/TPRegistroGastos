@@ -18,64 +18,66 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <style scoped>
 header {
-  line-height: 1.5;
-  max-height: 100vh;
+  background: #f8f9fa;
+  padding: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
 }
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 1rem;
   text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
 }
 
 nav a {
   display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
+  padding: 0.6rem 1.2rem;
+  margin: 0 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #34495e;
+  font-weight: 600;
+  border: 1.8px solid transparent;
+  transition: 
+    background-color 0.3s ease, 
+    color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-nav a:first-of-type {
-  border: 0;
+nav a:hover {
+  background-color: #3498db;
+  color: #fff;
+  border-color: #2980b9;
+}
+
+nav a.router-link-exact-active {
+  background-color: #27ae60;
+  color: white;
+  border-color: #219150;
+  cursor: default;
+}
+
+nav a.router-link-exact-active:hover {
+  background-color: #2ecc71;
+  border-color: #27ae60;
 }
 
 @media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+  .wrapper {
+    justify-content: flex-start;
   }
 
   nav {
     text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
   }
 }
 </style>
