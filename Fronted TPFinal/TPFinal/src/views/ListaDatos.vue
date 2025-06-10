@@ -2,25 +2,31 @@
   <div class="container">
     <h1>Registro de gastos</h1>
     <p>Tabla</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Fecha</th>
-          <th>Nombre del Comercio</th>
-          <th>Descripción</th>
-          <th>Monto</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in items" :key="item.id">
-          <td>{{ item.fecha }}</td>
-          <td>{{ item.nombreComercio }}</td>
-          <td>{{ item.descripcion }}</td>
-          <td>${{ item.monto }}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="tabla-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Nombre del Comercio</th>
+            <th>Descripción</th>
+            <th>Monto</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+      <div class="tabla-scroll">
+        <table>
+          <tbody>
+            <tr v-for="item in items" :key="item.id">
+              <td>{{ item.fecha }}</td>
+              <td>{{ item.nombreComercio }}</td>
+              <td>{{ item.descripcion }}</td>
+              <td>${{ item.monto }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -50,6 +56,70 @@ export default {
 </script>
 
 <style scoped>
+.tabla-wrapper {
+  width: 100%;
+}
+
+.tabla-scroll {
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.tabla-scroll table {
+  width: 100%;
+  background: white;
+}
+
+thead tr {
+  background-color: #2c3e50;
+  color: white;
+  text-align: left;
+  font-weight: 700;
+}
+
+thead th, .tabla-scroll td {
+  padding: 12px 16px;
+}
+
+.tabla-scroll tr {
+  background: #fff;
+  transition: background-color 0.3s ease;
+  cursor: default;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+
+.tabla-scroll tr:hover {
+  background-color: #f1f4f8;
+}
+
+.tabla-scroll td {
+  white-space: nowrap;
+  border-bottom: 1px solid #eee;
+}
+
+.tabla-scroll tr:last-child td {
+  border-bottom: none;
+}
+
+.tabla-scroll td:nth-child(4) {
+  font-weight: 600;
+  color: #27ae60; 
+}
+
+.tabla-scroll td:nth-child(3) {
+  white-space: normal;
+  word-break: break-word;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+
+.tabla-scroll {
+  max-height: 400px;
+  overflow-x: auto;
+  overflow-y: auo;
+}
 .container {
   max-width: 900px;
   margin: 2rem auto;
@@ -80,7 +150,7 @@ table {
   border-spacing: 0 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   background: white;
-  border-radius: 12px;
+  
   overflow: hidden;
 }
 
@@ -107,6 +177,7 @@ tbody tr:hover {
 }
 
 tbody td {
+  white-space: nowrap;
   padding: 12px 16px;
   border-bottom: 1px solid #eee;
 }
